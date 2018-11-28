@@ -1,12 +1,12 @@
 CC = gcc
 CFLAGS = -g
-POSTFLAGS = -lreadline
-DEPS = structs.h tree.h parser.h fastLookup.h
-OBJ = fastLookup.c parser.c tree.c
+POSTFLAGS =
+DEPS = hello.h
+OBJ = main.c hello.c
 
 %.o: %.c $(DEPS)
 	$(CC) $(CFLAGS) -c -o $@ $< $(POSTFLAGS)
-fs: $(OBJ)
+hello: $(OBJ)
 	gcc $(CFLAGS) -o $@ $^ $(POSTFLAGS)
 clean:
-	rm -f *.o fs
+	rm -f *.o hello
